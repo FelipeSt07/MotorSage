@@ -13,7 +13,7 @@
 <body>
     <header class="header">
 
-        <div class="menu">holala
+        <div class="menu">
 
             <div class="left">
                 <div class="btn-departamentos" id="btn-departamentos">
@@ -23,7 +23,7 @@
                 </div>
 
                 <div class="logo">
-                    <a href="index.html">
+                    <a href="index.php">
                         <img src="imagenes/logo7c.png" alt="">
                     </a>
                 </div>

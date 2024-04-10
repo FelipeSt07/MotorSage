@@ -180,7 +180,7 @@
     </section>
 
     <footer>
-         <div class="cont-footer">
+        <div class="cont-footer">
 
             <div class="colum-footer">
                 <h3>Contactos</h3><br>
