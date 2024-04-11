@@ -1,3 +1,11 @@
+<?php
+require('config/config.php');
+include("config/conexion.php");
+$conexion = conectar();
+
+$query = "SELECT idproducto, nombre, precio FROM `producto` WHERE estado=1";
+$result = mysqli_query($conexion, $query);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
