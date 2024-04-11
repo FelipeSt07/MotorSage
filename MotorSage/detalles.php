@@ -114,7 +114,7 @@ if ($id == '' || $token == '') {
                         <a href="productos.php" id="oculto"><i class="fa-solid fa-motorcycle"></i>Productos</a>
                     </div>
                     <div class="div barra">
-                        <a href="servicios.php" id="oculto"><i class="fa-regular fa-comments"></i>Comentarios</a>
+                        <a href="pqr.php" id="oculto"><i class="fa-regular fa-comments"></i>PQR</a>
                     </div>
 
 

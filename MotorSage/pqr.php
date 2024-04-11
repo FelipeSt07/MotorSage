@@ -144,8 +144,8 @@ $result = mysqli_query($conexion, $query);
             </div> -->
             <div id="pago-ser" class="col-md-5- d-grid gap-2">
                 <br>
-                <a href="https://walink.co/0efe65" target="_blank" id="primary_c"
-                    class="btn btn-primary btn-lg">ENVIAR CORREO</a>
+                <a href="https://walink.co/ed4ea0" target="_blank" id="primary_c"
+                    class="btn btn-primary btn-lg">ENVIAR MENSAJE</a>
                 <br>
                 <br>
                 <br>

@@ -10,7 +10,7 @@
 
         $token_tmp = hash_hmac('sha1', $id, KEY_TOKEN);
 
-    if ($token == $token_tmp && $comentario > 0 && is_numeric($comentario)) {
+    if ($token == $token_tmp ) {
 
         if (isset($_SESSION['carrito']['productos'][$id])) {
             $_SESSION['carrito']['productos'][$id] += $comentario;
