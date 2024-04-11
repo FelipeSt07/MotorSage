@@ -60,7 +60,7 @@ $result = mysqli_query($conexion, $query);
                             </div>
 
                         <?php } else { ?>
-                            <a href="FormLogin.php" id="oculto"><i class="fa-regular fa-circle-user"></i>Iniciar Sesion</a>
+                            <a href="login.php" id="oculto"><i class="fa-regular fa-circle-user"></i>Iniciar Sesion</a>
                         <?php } ?>
                     </div>
                     <div class="div barra">
