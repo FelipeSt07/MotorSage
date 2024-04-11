@@ -238,7 +238,7 @@ main>.container {
 }
 
 .nav_p div a {
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     display: inline-block;
     font-size: 17px;
     display: flex;
@@ -625,10 +625,10 @@ footer a:hover {
 }
 
 #imagen_a {
-    padding-top: 2%;
-    padding-left: 35%;
-    width: 280px;
-    height: 155px;
+    /* padding-top: 2%;*/
+    padding-left: 10%;
+    width: 550px;
+    height: 400px;
 }
 
 #imagen {

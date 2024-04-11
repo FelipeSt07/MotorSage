@@ -238,7 +238,7 @@ main>.container {
 }
 
 .nav_p div a {
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     display: inline-block;
     font-size: 17px;
     display: flex;
@@ -626,20 +626,24 @@ footer a:hover {
 
 #imagen_a {
     padding-top: 2%;
-    padding-left: 35%;
-    width: 280px;
-    height: 155px;
+    padding-left: 15%;
+    width: 350px;
+    height: 300px;
 }
 
 #imagen {
     padding-top: 2%;
     padding-left: 35%;
-    width: 280px;
-    height: 155px;
+    width: 400px;
+    height: 200px;
 }
 
 #card {
     text-align: center;
+}
+
+#card7 {
+    background-color: #ffffff75;
 }
 
 .success_c {

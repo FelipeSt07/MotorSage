@@ -38,7 +38,7 @@
                     <a href="productos.php"><i class="fa-solid fa-motorcycle"></i>Productos</a>
                 </div>
                 <div class="div">
-                    <a href=""><i class="fa-regular fa-comments"></i>Comentarios</a>
+                    <a href=""><i class="fa-regular fa-comments"></i>PQR</a>
                 </div>
             </div>
         </div>

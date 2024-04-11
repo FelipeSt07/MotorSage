@@ -60,14 +60,14 @@ $result = mysqli_query($conexion, $query);
               </div>
 
             <?php } else { ?>
-              <a href="FormLogin.php" id="oculto"><i class="fa-regular fa-circle-user"></i>Iniciar Sesion</a>
+              <a href="login.php" id="oculto"><i class="fa-regular fa-circle-user"></i>Iniciar Sesion</a>
             <?php } ?>
           </div>
           <div class="div barra">
-            <a href="Productos.php" id="oculto"><i class="fa-solid fa-motorcycle"></i>Productos</a>
+            <a href="productos.php" id="oculto"><i class="fa-solid fa-motorcycle"></i>Productos</a>
           </div>
           <div class="div barra">
-            <a href="servicios.php" id="oculto"><i class="fa-regular fa-comments"></i>Servicios</a>
+            <a href="pqr.php" id="oculto"><i class="fa-regular fa-comments"></i>PQR</a>
           </div>
 
 
@@ -79,7 +79,7 @@ $result = mysqli_query($conexion, $query);
           <div class="categorias">
             <a id="oculto_a" href="FormLogin.php">Iniciar Sesion</a>
             <a id="oculto_a" href="productos.php">Productos</a>
-            <a id="oculto_a" href="servicios.php">Servicios</a>
+            <a id="oculto_a" href="servicios.php">Comentarios</a>
           </div>
         </div>
       </div>
@@ -100,7 +100,7 @@ $result = mysqli_query($conexion, $query);
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
           <?php foreach ($result as $row) { ?>
             <div class="col">
-              <div class="card shadow-sm">
+              <div id="card7" class="card shadow-sm">
                 <?php
                 $id = $row['idproducto'];
                 $imagen = "imagenes/productos/" . $id . "/principal.png";
@@ -125,7 +125,7 @@ $result = mysqli_query($conexion, $query);
                     </div>
                     <a href="#" id="success_c" class="btn btn-success"
                       onclick="addProducto
-              (<?php echo $row['idproducto']; ?>, '<?php echo hash_hmac('sha1', $row['idproducto'], KEY_TOKEN); ?>')">Agregar</a>
+              (<?php echo $row['idproducto']; ?>, '<?php echo hash_hmac('sha1', $row['idproducto'], KEY_TOKEN); ?>')">Guardar</a>
                   </div>
                 </div>
               </div>

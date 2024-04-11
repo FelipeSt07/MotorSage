@@ -61,11 +61,11 @@ if ($id == '' || $token == '') {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="detalles.css">
-    <link rel="shortcut icon" href="imagenes/barber-shop.svg">
+    <link rel="shortcut icon" href="imagenes/moto.png">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <title>Barberia Harlan</title>
+    <title>Detalles | Motor SAGE</title>
 </head>
 
 <body>
@@ -107,11 +107,11 @@ if ($id == '' || $token == '') {
                             </div>
 
                         <?php } else { ?>
-                            <a href="FormLogin.php" id="oculto"><i class="fa-regular fa-circle-user"></i>Iniciar Sesion</a>
+                            <a href="login.php" id="oculto"><i class="fa-regular fa-circle-user"></i>Iniciar Sesion</a>
                         <?php } ?>
                     </div>
                     <div class="div barra">
-                        <a href="Productos.php" id="oculto"><i class="fa-solid fa-motorcycle"></i>Productos</a>
+                        <a href="productos.php" id="oculto"><i class="fa-solid fa-motorcycle"></i>Productos</a>
                     </div>
                     <div class="div barra">
                         <a href="servicios.php" id="oculto"><i class="fa-regular fa-comments"></i>Comentarios</a>
@@ -184,15 +184,21 @@ if ($id == '' || $token == '') {
                             <?php echo $descripcion; ?>
                         </p>
 
-                        <div class="col-3 my-3">
-                            Cantidad: <input class="form-control" id="cantidad" name="cantidad" type="number" min="1"
-                                max="10" value="1">
+                        <div class="col-6 my-3">
+                            Comentario: <textarea class="form-control" id="comentario" name="comentario"
+                                rows="4"></textarea>
                         </div>
 
+                        <!-- <div class="col-3 my-3">
+                            Cantidad: <input class="form-control" id="cantidad" name="cantidad" type="label" min="1"
+                                max="100" value="">
+                        </div> -->
+
                         <div class="d-grid gap-3 col-10">
-                            <button id="primary_c" class="btn btn-primary" type="button">Comprar Ahora</button>
+                            <button id="primary_c" class="btn btn-primary" type="button" onclick="addComentario(<?php echo $id; ?>,
+                            comentario.value, '<?php echo $token_tmp; ?>')">Enviar comentario</button>
                             <button id="success_c" class="btn btn-outline-primary" type="button" onclick="addProducto(<?php echo $id; ?>,
-                         cantidad.value, '<?php echo $token_tmp; ?>')">Agregar al carrito</button>
+                            cantidad.value, '<?php echo $token_tmp; ?>')">Agregar</button>
                         </div>
 
                     </div>
@@ -245,7 +251,7 @@ if ($id == '' || $token == '') {
             crossorigin="anonymous"></script>
 
         <script>
-            function addProducto(id, cantidad, token) {
+            function addComentario(id, producto, token) {
                 let url = 'clases/carrito.php'
                 let formData = new FormData()
                 formData.append('id', id)
