@@ -67,7 +67,7 @@ $result = mysqli_query($conexion, $query);
                         <a href="productos.php" id="oculto"><i class="fa-solid fa-motorcycle"></i>Productos</a>
                     </div>
                     <div class="div barra">
-                        <a href="pqr.php" id="oculto"><i class="fa-regular fa-comments"></i>PQR</a>
+                        <a href="pqr.php" id="oculto"><i class="fa-regular fa-comments"></i>PQRS</a>
                     </div>
 
                 </div>
@@ -87,7 +87,7 @@ $result = mysqli_query($conexion, $query);
 
 
         <section class="text">
-            <h1 id="titulo">PQR (Peticiones, Quejas y Reclamos)</h1>
+            <h1 id="titulo">PQRS (Peticiones, Quejas, Reclamos y Sugerencias)</h1>
             <p>Nos dedicamos a escuchar tus necesidades,resolver </p>
             <p>tus inquietudes y asegurarnos de que recibas el mejor</p>
             <p>servicio posible. Ven y únete a nuestra comunidad de</p>

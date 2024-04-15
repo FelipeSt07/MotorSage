@@ -67,7 +67,7 @@ $result = mysqli_query($conexion, $query);
             <a href="productos.php" id="oculto"><i class="fa-solid fa-motorcycle"></i>Productos</a>
           </div>
           <div class="div barra">
-            <a href="pqr.php" id="oculto"><i class="fa-regular fa-comments"></i>PQR</a>
+            <a href="pqr.php" id="oculto"><i class="fa-regular fa-comments"></i>PQRS</a>
           </div>
 
 

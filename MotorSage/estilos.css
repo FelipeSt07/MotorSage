@@ -717,9 +717,22 @@ footer a:hover {
 }
 
 .izquierda {
-    padding: 80px;
+    padding: 20px 80px 80px 80px;;
     margin-right: 3%;
     text-align: center;
+}
+
+.izquierda a {
+    font-size: 20px;
+    margin: 10px;
+    color: #000;
+    transition: transform 0.2s ease-in-out;
+
+}
+
+.izquierda a:hover {
+    color: #ffffff;
+    transform: scale(1.1);
 }
 
 .izquierda h2 {
@@ -740,6 +753,7 @@ footer a:hover {
 
 .derecha {
     padding: 5px;
+    margin-bottom: 50px;
 }
 
 

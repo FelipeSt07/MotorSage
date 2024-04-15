@@ -38,7 +38,7 @@
                     <a href="productos.php"><i class="fa-solid fa-motorcycle"></i>Productos</a>
                 </div>
                 <div class="div">
-                    <a href=""><i class="fa-regular fa-comments"></i>PQR</a>
+                    <a href="pqr.php"><i class="fa-regular fa-comments"></i>PQRS</a>
                 </div>
             </div>
         </div>
@@ -48,7 +48,7 @@
                 <div class="categorias">
                     <a href="login.html">Iniciar Sesion</a>
                     <a href="productos.html">Productos</a>
-                    <a href="#">Servicios</a>
+                    <a href="pqr.php">PQRS</a>
                 </div>
             </div>
         </div>
@@ -161,13 +161,14 @@
             <p>Cl. 6b #7-42 a 7-52</p>
             <p>BARRIO MARIA ISABEL</p>
             <p>PASTO, NARIÑO</p>
-            <br>
             <i class="fa-regular fa-clock"></i>
-            <p><strong>¡FUNCIONAMOS BAJO RESERVA!</strong></p>
-            <p>HORARIO DE ATENCIÓN</p>
-            <p>EJEMPLO EJEMPLO EJEMPLO</p>
-            <p>EJEMPLO EJEMPLO EJEMPLO</p>
-            <p>EJEMPLO EJEMPLO EJEMPLO</p>
+            <h2>¡OFERTA ESPECIAL POR TIEMPO LIMITADO!</h2><br>
+            <p>MOTO EN OFERTA: VICTORY BOMBER 125</p>
+            <p>TERMINOS Y CONDICIONES: VÁLIDO HASTA EL 20/04/2024,</p>
+            <p>SUJETO A DISPONIBILIDAD DE STOCK.    </p>
+            <i class="fa-solid fa-arrow-down"></i><br>
+            <a href="detalles.php?%20id=1&token=bf072c2eadbfadc7cd53cf14a205624f33357ac7">
+                <strong>MÁS INFORMACION Y DETALLES DE LA MOTO</strong></a>
 
 
         </div>

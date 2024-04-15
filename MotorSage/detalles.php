@@ -114,7 +114,7 @@ if ($id == '' || $token == '') {
                         <a href="productos.php" id="oculto"><i class="fa-solid fa-motorcycle"></i>Productos</a>
                     </div>
                     <div class="div barra">
-                        <a href="pqr.php" id="oculto"><i class="fa-regular fa-comments"></i>PQR</a>
+                        <a href="pqr.php" id="oculto"><i class="fa-regular fa-comments"></i>PQRS</a>
                     </div>
 
 
@@ -178,15 +178,32 @@ if ($id == '' || $token == '') {
                             <?php echo $nombre; ?>
                         </h2>
                         <h2>
-                            <?php echo MONEDA . number_format($precio, 2, '.', ','); ?>
+                            <?php echo MONEDA . number_format($precio, 2, '.', ','); ?><strong> Antes</strong>
                         </h2>
+                        <h1>
+                            <?php
+                            // Definir el precio original
+                            $precio = 5350000; // Puedes cambiar esto por el precio real
+                            
+                            // Calcular el descuento (25%)
+                            $descuento = $precio * 0.25; // El descuento es el 25% del precio original
+                            
+                            // Restar el descuento al precio original
+                            $precioConDescuento = $precio - $descuento;
+
+                            echo MONEDA . number_format($precioConDescuento, 2, '.', ','); ?><strong> Ahora</strong>
+                        </h1>
                         <p class="lead">
                             <?php echo $descripcion; ?>
                         </p>
 
-                        <div class="col-6 my-3">
+                        <div class="col-10 my-3">
                             Comentario: <textarea class="form-control" id="comentario" name="comentario"
-                                rows="4"></textarea>
+                                rows="2"></textarea><br>
+                            <div class="mostrado">
+                                <div id="contenidoMostrado" class="form-control">
+                                </div>
+                            </div>
                         </div>
 
                         <!-- <div class="col-3 my-3">
@@ -195,8 +212,8 @@ if ($id == '' || $token == '') {
                         </div> -->
 
                         <div class="d-grid gap-3 col-10">
-                            <button id="primary_c" class="btn btn-primary" type="button" onclick="addComentario(<?php echo $id; ?>,
-                            comentario.value, '<?php echo $token_tmp; ?>')">Enviar comentario</button>
+                            <button id="primary_c" class="btn btn-primary" type="button"
+                                onclick="addComentario()">Enviar comentario</button>
                             <button id="success_c" class="btn btn-outline-primary" type="button" onclick="addProducto(<?php echo $id; ?>,
                             cantidad.value, '<?php echo $token_tmp; ?>')">Agregar</button>
                         </div>
@@ -250,29 +267,39 @@ if ($id == '' || $token == '') {
             integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
             crossorigin="anonymous"></script>
 
-        <script>
-            function addComentario(id, producto, token) {
-                let url = 'clases/carrito.php'
-                let formData = new FormData()
-                formData.append('id', id)
-                formData.append('cantidad', cantidad)
-                formData.append('token', token)
+    </div>
 
-                fetch(url, {
-                    method: 'POST',
-                    body: formData,
-                    mode: 'cors'
-                }).then(response => response.json())
-                    .then(data => {
-                        if (data.ok) {
-                            let elemento = document.getElementById("num_cart")
-                            elemento.innerHTML = data.numero
-                        }
-                    })
 
-            }
-    </div >
-        </script>
+    <script>
+
+        // Array para almacenar los comentarios
+        var comentarios = [];
+
+        function addComentario() {
+            // Obtener el valor del textarea
+            var comentarioNuevo = document.getElementById("comentario").value;
+
+            // Obtener el nombre de usuario desde PHP
+            var usuario = "<?php echo $_SESSION['username']; ?>";
+
+            // Concatenar el nombre de usuario con el comentario
+            var comentarioConUsuario = usuario + ": " + comentarioNuevo;
+
+            // Agregar el nuevo comentario al array
+            comentarios.push(comentarioConUsuario);
+
+            // Mostrar los comentarios en el div
+            var contenidoMostrado = document.getElementById("contenidoMostrado");
+            contenidoMostrado.innerHTML = "";
+            comentarios.forEach(function (comentario) {
+                contenidoMostrado.innerHTML += comentario + "<br>";
+            });
+
+            // Limpiar el textarea después de agregar el comentario
+            document.getElementById("comentario").value = "";
+        }
+
+    </script>
 
 
 </body>
