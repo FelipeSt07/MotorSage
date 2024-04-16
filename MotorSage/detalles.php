@@ -173,26 +173,46 @@ if ($id == '' || $token == '') {
 
 
                     </div>
+
+                    <?php
+                    // Definir el precio original
+                    $precio = 5350000; // Puedes cambiar esto por el precio real
+                    
+                    // Identificador único del producto para el que deseas aplicar el descuento
+                    $idproducto = 123; // Reemplaza 123 con el ID del producto específico
+                    
+                    // Variable para llevar un seguimiento de si el descuento ya ha sido aplicado
+                    $descuento_aplicado = false;
+
+                    ?>
+
                     <div class="col-md-6 order-md-2">
                         <h2>
                             <?php echo $nombre; ?>
                         </h2>
-                        <h2>
-                            <?php echo MONEDA . number_format($precio, 2, '.', ','); ?><strong> Antes</strong>
-                        </h2>
-                        <h1>
-                            <?php
-                            // Definir el precio original
-                            $precio = 5350000; // Puedes cambiar esto por el precio real
-                            
-                            // Calcular el descuento (25%)
-                            $descuento = $precio * 0.25; // El descuento es el 25% del precio original
-                            
-                            // Restar el descuento al precio original
-                            $precioConDescuento = $precio - $descuento;
 
-                            echo MONEDA . number_format($precioConDescuento, 2, '.', ','); ?><strong> Ahora</strong>
-                        </h1>
+                        <?php if ($idproducto == 123 && !isset($descuento_aplicado)) { ?>
+                            <h2><?php echo MONEDA . number_format($precio, 2, '.', ','); ?><strong> Antes</strong></h2>
+                            <h1>
+                                <?php
+                                // Definir el precio original
+                                $precio = 5350000; // Puedes cambiar esto por el precio real
+                            
+                                // Calcular el descuento (25%)
+                                $descuento = $precio * 0.25; // El descuento es el 25% del precio original
+                            
+                                // Restar el descuento al precio original
+                                $precioConDescuento = $precio - $descuento;
+
+                                echo MONEDA . number_format($precioConDescuento, 2, '.', ',') . '<strong> Ahora</strong>';
+
+                                // Marcar que el descuento ya ha sido aplicado para no volver a aplicarlo
+                                $descuento_aplicado = true;
+                                ?>
+                            </h1>
+                        <?php } else { ?>
+                            <h2><?php echo MONEDA . number_format($precio, 2, '.', ','); ?></h2>
+                        <?php } ?>
                         <p class="lead">
                             <?php echo $descripcion; ?>
                         </p>
