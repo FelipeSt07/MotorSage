@@ -1,6 +1,6 @@
 <?php
-require('config/config.php');
-include("config/conexion.php");
+require ('config/config.php');
+include ("config/conexion.php");
 $conexion = conectar();
 
 $query = "SELECT idproducto, nombre, precio FROM `producto` WHERE estado=1";
