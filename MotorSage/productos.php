@@ -125,7 +125,10 @@ $result = mysqli_query($conexion, $query);
                            hash_hmac('sha1', $row['idproducto'], KEY_TOKEN); ?>" class="btn btn-group"
                         id="primary_c">Detalles</a>
                     </div>
-                    <a href="#" id="success_c" class="btn btn-success" onclick="addProducto()">Guardar</a>
+                    <!-- Dentro del bucle foreach donde se muestran los productos -->
+                    <a href="preferencias.php?idproducto=<?php echo $row['idproducto']; ?>&nombre=<?php echo urlencode($row['nombre']); ?>&precio=<?php echo $row['precio']; ?>&imagen=<?php echo urlencode($imagen); ?>"
+                      id="success_c" class="btn btn-success">Guardar</a>
+
                   </div>
                 </div>
               </div>
@@ -184,26 +187,12 @@ $result = mysqli_query($conexion, $query);
 
   </div>
   <script>
-    function addProducto(id, token) {
-      let url = 'clases/carrito.php'
-      let formData = new FormData()
-      formData.append('id', id)
-      formData.append('token', token)
-
-      fetch(url, {
-        method: 'POST',
-        body: formData,
-        mode: 'cors'
-      }).then(response => response.json())
-        .then(data => {
-          if (data.ok) {
-            let elemento = document.getElementById("num_cart")
-            elemento.innerHTML = data.numero
-          }
-        })
-
+    function addPreferencia(id, nombre, precio) {
+      // Aquí puedes enviar la información del producto al servidor
+      // Puedes usar fetch() o AJAX para enviar los datos al servidor
+      // Por ahora, simplemente mostraremos un mensaje de alerta con la información del producto
+      alert("Producto guardado:\nID: " + id + "\nNombre: " + nombre + "\nPrecio: " + precio);
     }
-
 
   </script>
 

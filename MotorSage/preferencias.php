@@ -6,6 +6,18 @@ $conexion = conectar();
 $query = "SELECT idproducto, nombre, precio FROM `producto` WHERE estado=1";
 $result = mysqli_query($conexion, $query);
 ?>
+
+<?php
+
+// Verificar si se recibieron los parámetros del producto desde la URL
+if (isset($_GET['idproducto']) && isset($_GET['nombre']) && isset($_GET['precio']) && isset($_GET['imagen'])) {
+    // Guardar la información del producto en variables de sesión
+    $_SESSION['preferencia_idproducto'] = $_GET['idproducto'];
+    $_SESSION['preferencia_nombre'] = $_GET['nombre'];
+    $_SESSION['preferencia_precio'] = $_GET['precio'];
+    $_SESSION['preferencia_imagen'] = $_GET['imagen'];
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -97,58 +109,25 @@ $result = mysqli_query($conexion, $query);
 
         <!--Contenido-->
         <main>
-            <div class="container">
-                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                    <div class="col">
-                        <div class="card shadow-sm">
-                            <img class="img-col" src="imagenes/motoejemplo.jpg">
-                            <!-- <div id="h5" class="card-body">
-                                <h5 class="card-title">Peluqueria</h5>
-                                <p class="card-text">Corte realizado por maestros en barbería, capacitados en cortes
-                                    clásicos y modernos, el servicio incluye: asesoramiento de imagen y lavado.</p>
-
-                            </div> -->
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card shadow-sm">
-                            <img class="img-col" src="imagenes/motoejemplo2.jpg">
-                            <!-- <div id="h5" class="card-body">
-                                <h5 class="card-title">Ritual de barba</h5>
-                                <p class="card-title">Ritual con toalla caliente y fría, afeitado tradicional con
-                                    barbera y
-                                    uso de productos previos y posteriores al afeitado para el cuidado de la barba.</p>
-
-                            </div> -->
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card shadow-sm">
-                            <img class="img-col" src="imagenes/motoejemplo3.jpg">
-                            <!-- <div id="h5" class="card-body">
-                                <h5 class="card-title">Spa facial</h5>
-                                <p class="card-text">Spa facial completo; Servicio premium de exfoliación, mascarilla
-                                    dorada, fototerapia, colágeno, hidratación facial y puede incluir depilación con
-                                    cera.
-                                </p>
-
-                            </div> -->
+            <div class="content">
+                <div class="container d-flex justify-content-center">
+                    <div class="row">
+                        <div class="col text-center">
+                            <div class="card shadow-sm">
+                                <img class="img-col" src="<?php echo $_SESSION['preferencia_imagen']; ?>">
+                                <div class="card-body">
+                                    <h5 class="card-title"><?php echo $_SESSION['preferencia_nombre']; ?></h5>
+                                    <p class="card-text"><?php echo $_SESSION['preferencia_precio']; ?></p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <br><br><br>
-            <!-- <div id="pago-ser" class="col-md-5- d-grid gap-2">
-                <br>
-                <a href="https://walink.co/ed4ea0" target="_blank" id="primary_c"
-                    class="btn btn-primary btn-lg">ENVIAR MENSAJE</a>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
 
-            </div> -->
+            </div>
+
+            <br><br><br>
+
         </main>
 
 
