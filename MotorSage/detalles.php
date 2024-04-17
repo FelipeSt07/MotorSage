@@ -103,6 +103,7 @@ if ($id == '' || $token == '') {
                                 </button>
                                 <ul class="dropdown-menu" aria-labelledby="btn_session">
                                     <li><a class="dropdown-item" href="logout.php">Cerrar sesión</a></li>
+                                    <li><a class="dropdown-item" href="preferencias.php">Preferencias</a></li>
                                 </ul>
                             </div>
 

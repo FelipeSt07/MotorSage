@@ -264,7 +264,7 @@ main>.container {
 }
 
 .nav_p a:hover {
-    color: #caaf00;
+    color: #F1D41C;
 }
 
 .nav_p a i {
@@ -394,6 +394,11 @@ main>.container {
     margin: 10px auto;
 }
 
+.img-col {
+    height: 300px;
+    width: auto;
+}
+
 /*-----------------*/
 /*       TEXT      */
 /*-----------------*/
@@ -424,6 +429,10 @@ main>.container {
 /*-----------------*/
 
 footer {
+    /* position: fixed;
+    bottom: 0;
+    left: 0; 
+    width: 100%;*/
     background-color: #222;
     padding: 3rem;
     color: #fff;

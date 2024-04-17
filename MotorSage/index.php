@@ -85,20 +85,29 @@
     <section class="mosaico">
         <div class="row">
             <div class="column">
-                <img src="imagenes/motoejemplo.jpg">
-                <img src="imagenes/motoejemplo2.jpg">
-                <img src="imagenes/motoejemplo3.jpg">
+                <a href="detalles.php?%20id=1&token=bf072c2eadbfadc7cd53cf14a205624f33357ac7">
+                    <img src="imagenes/productos/1/principal.png"></a>
+                <a href="detalles.php?%20id=2&token=a2aa4aa1565d6465b4b68acd39aa795b030e94bb">
+                    <img src="imagenes/productos/2/principal.png"></a>
+                <a href="detalles.php?%20id=3&token=b68ac8fa63b0224c48a1ec5033a77a19561758f8">
+                    <img src="imagenes/productos/3/principal.png"></a>
 
             </div>
             <div class="column">
-                <img src="imagenes/motoejemplo3.jpg">
-                <img src="imagenes/motoejemplo.jpg">
-                <img src="imagenes/motoejemplo2.jpg">
+                <a href="detalles.php?%20id=4&token=a69b3bc443676fabed604bb2a25a089c74b7e66b">
+                    <img src="imagenes/productos/4/principal.png"></a>
+                <a href="detalles.php?%20id=5&token=5c971235dd2d7411ed7f57e44e21e71da2dd9b4a">
+                    <img src="imagenes/productos/5/principal.png"></a>
+                <a href="detalles.php?%20id=6&token=e8a60e261a239252a225ee4dbc3efa32a60e832d">
+                    <img src="imagenes/productos/6/principal.png"></a>
             </div>
             <div class="column">
-                <img src="imagenes/motoejemplo2.jpg">
-                <img src="imagenes/motoejemplo3.jpg">
-                <img src="imagenes/motoejemplo.jpg">
+                <a href="detalles.php?%20id=7&token=d79e7f6d6498f16e50c8ffdc1e2b70c56aa6a08d">
+                    <img src="imagenes/productos/7/principal.png"></a>
+                <a href="detalles.php?%20id=8&token=5ffa8f9ea711055d1e3f0b00adc6329069239c80">
+                    <img src="imagenes/productos/8/principal.png"></a>
+                <a href="detalles.php?%20id=9&token=c7ed1afe30d0c1e5ef3eacd473f4640d7bcea890">
+                    <img src="imagenes/productos/9/principal.png"></a>
 
             </div>
         </div>
@@ -165,7 +174,7 @@
             <h2>¡OFERTA ESPECIAL POR TIEMPO LIMITADO!</h2><br>
             <p>MOTO EN OFERTA: VICTORY BOMBER 125</p>
             <p>TERMINOS Y CONDICIONES: VÁLIDO HASTA EL 20/04/2024,</p>
-            <p>SUJETO A DISPONIBILIDAD DE STOCK.    </p>
+            <p>SUJETO A DISPONIBILIDAD DE STOCK. </p>
             <i class="fa-solid fa-arrow-down"></i><br>
             <a href="detalles.php?%20id=1&token=bf072c2eadbfadc7cd53cf14a205624f33357ac7">
                 <strong>MÁS INFORMACION Y DETALLES DE LA MOTO</strong></a>

@@ -54,9 +54,11 @@ $result = mysqli_query($conexion, $query);
                     <?php echo $_SESSION['username']; ?>
                   </a>
                 </button>
-                <ul class="dropdown-menu" aria-labelledby="btn_session">
+                <ul class="dropdown-menu" aria-labelledby="btn_session" style="">
                   <li><a class="dropdown-item" href="logout.php">Cerrar sesión</a></li>
+                  <li><a class="dropdown-item" href="preferencias.php">Preferencias</a></li>
                 </ul>
+
               </div>
 
             <?php } else { ?>
@@ -123,9 +125,7 @@ $result = mysqli_query($conexion, $query);
                            hash_hmac('sha1', $row['idproducto'], KEY_TOKEN); ?>" class="btn btn-group"
                         id="primary_c">Detalles</a>
                     </div>
-                    <a href="#" id="success_c" class="btn btn-success"
-                      onclick="addProducto
-              (<?php echo $row['idproducto']; ?>, '<?php echo hash_hmac('sha1', $row['idproducto'], KEY_TOKEN); ?>')">Guardar</a>
+                    <a href="#" id="success_c" class="btn btn-success" onclick="addProducto()">Guardar</a>
                   </div>
                 </div>
               </div>
@@ -181,29 +181,31 @@ $result = mysqli_query($conexion, $query);
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
       crossorigin="anonymous"></script>
 
-    <script>
-      function addProducto(id, token) {
-        let url = 'clases/carrito.php'
-        let formData = new FormData()
-        formData.append('id', id)
-        formData.append('token', token)
 
-        fetch(url, {
-          method: 'POST',
-          body: formData,
-          mode: 'cors'
-        }).then(response => response.json())
-          .then(data => {
-            if (data.ok) {
-              let elemento = document.getElementById("num_cart")
-              elemento.innerHTML = data.numero
-            }
-          })
+  </div>
+  <script>
+    function addProducto(id, token) {
+      let url = 'clases/carrito.php'
+      let formData = new FormData()
+      formData.append('id', id)
+      formData.append('token', token)
 
-      }
-  </div >
+      fetch(url, {
+        method: 'POST',
+        body: formData,
+        mode: 'cors'
+      }).then(response => response.json())
+        .then(data => {
+          if (data.ok) {
+            let elemento = document.getElementById("num_cart")
+            elemento.innerHTML = data.numero
+          }
+        })
 
-    </script>
+    }
+
+
+  </script>
 
 
 </body>

@@ -13,12 +13,12 @@ $result = mysqli_query($conexion, $query);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="pqr.css">
+    <link rel="stylesheet" href="preferencias.css">
     <link rel="shortcut icon" href="imagenes/moto.png">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <title>PQRS | Motor SAGE</title>
+    <title>PREFERENCIAS | Motor SAGE</title>
 </head>
 
 <body>
@@ -56,7 +56,6 @@ $result = mysqli_query($conexion, $query);
                                 </button>
                                 <ul class="dropdown-menu" aria-labelledby="btn_session">
                                     <li><a class="dropdown-item" href="logout.php">Cerrar sesión</a></li>
-                                    <li><a class="dropdown-item" href="preferencias.php">Preferencias</a></li>
                                 </ul>
                             </div>
 
@@ -88,62 +87,58 @@ $result = mysqli_query($conexion, $query);
 
 
         <section class="text">
-            <h1 id="titulo">PQRS (Peticiones, Quejas, Reclamos y Sugerencias)</h1>
-            <p>Nos dedicamos a escuchar tus necesidades,resolver </p>
-            <p>tus inquietudes y asegurarnos de que recibas el mejor</p>
-            <p>servicio posible. Ven y únete a nuestra comunidad de</p>
-            <p>entusiastas de las motocicletas, donde tu opinión</p>
-            <p>cuenta y nos esforzamos por brindarte una experiencia</p>
-            <p>excepcional en cada interacción. ¡Déjanos ser tu aliado</p>
-            <p>en el apasionante mundo de las motos!</p>
-
-
+            <h1 id="">PREFERENCIAS</h1>
+            <p>Descubre tu pasión por las motocicletas con nosotros. </p>
+            <p>Aquí, nos dedicamos a entender tus preferencias</p>
+            <p> hacer que tu experiencia sea única.</p>
+            <p>Tu opinión es fundamental y nos esforzamos por ofrecerte lo mejor.</p>
 
         </section>
 
         <!--Contenido-->
         <main>
-            <!-- <div class="container">
+            <div class="container">
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                     <div class="col">
                         <div class="card shadow-sm">
-                            <img src="imagenes/pexels1.jpg">
-                            <div id="h5" class="card-body">
+                            <img class="img-col" src="imagenes/motoejemplo.jpg">
+                            <!-- <div id="h5" class="card-body">
                                 <h5 class="card-title">Peluqueria</h5>
                                 <p class="card-text">Corte realizado por maestros en barbería, capacitados en cortes
                                     clásicos y modernos, el servicio incluye: asesoramiento de imagen y lavado.</p>
 
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     <div class="col">
                         <div class="card shadow-sm">
-                            <img src="imagenes/pexels3.jpg">
-                            <div id="h5" class="card-body">
+                            <img class="img-col" src="imagenes/motoejemplo2.jpg">
+                            <!-- <div id="h5" class="card-body">
                                 <h5 class="card-title">Ritual de barba</h5>
                                 <p class="card-title">Ritual con toalla caliente y fría, afeitado tradicional con
                                     barbera y
                                     uso de productos previos y posteriores al afeitado para el cuidado de la barba.</p>
 
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     <div class="col">
                         <div class="card shadow-sm">
-                            <img src="imagenes/pexels2.jpg">
-                            <div id="h5" class="card-body">
+                            <img class="img-col" src="imagenes/motoejemplo3.jpg">
+                            <!-- <div id="h5" class="card-body">
                                 <h5 class="card-title">Spa facial</h5>
                                 <p class="card-text">Spa facial completo; Servicio premium de exfoliación, mascarilla
                                     dorada, fototerapia, colágeno, hidratación facial y puede incluir depilación con
                                     cera.
                                 </p>
 
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
-            </div> -->
-            <div id="pago-ser" class="col-md-5- d-grid gap-2">
+            </div>
+            <br><br><br>
+            <!-- <div id="pago-ser" class="col-md-5- d-grid gap-2">
                 <br>
                 <a href="https://walink.co/ed4ea0" target="_blank" id="primary_c"
                     class="btn btn-primary btn-lg">ENVIAR MENSAJE</a>
@@ -153,7 +148,7 @@ $result = mysqli_query($conexion, $query);
                 <br>
                 <br>
 
-            </div>
+            </div> -->
         </main>
 
 
