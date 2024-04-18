@@ -54,7 +54,7 @@ if (isset($_GET['idproducto']) && isset($_GET['nombre']) && isset($_GET['precio'
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <title>PREFERENCIAS | Motor SAGE</title>
+    <title>Preferencias | Motor SAGE</title>
 </head>
 
 <body>
@@ -142,12 +142,10 @@ if (isset($_GET['idproducto']) && isset($_GET['nombre']) && isset($_GET['precio'
                                 <div class="card-body">
                                     <h5 class="card-title"><?php echo $_SESSION['preferencia_nombre']; ?></h5>
                                     <p class="card-text"><?php echo $_SESSION['preferencia_precio']; ?></p>
-                                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-                                        <!-- Agregar un campo oculto para enviar el ID de la preferencia -->
-                                        <input type="hidden" name="preferencia_id"
-                                            value="<?php echo $_SESSION['preferencia_id']; ?>">
-                                        <button type="submit" class="btn btn-danger">Eliminar preferencia</button>
-                                    </form>
+                                    <a href="productos.php">
+                                    <button type="submit" id="primary_c" class="btn btn-danger">Eliminar
+                                        preferencia</button>
+                                    </a>
                                 </div>
                             </div>
                         </div>

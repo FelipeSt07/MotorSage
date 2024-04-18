@@ -286,6 +286,21 @@ main>.container {
     display: inline-block;
 }
 
+/* Estilos específicos para el formulario */
+.navbar-form {
+    padding: 10px;
+    background: linear-gradient(135deg, #3d3d3d, #707070);
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: center;
+}
+.navbar-form .form-control {
+    margin-right: 10px;
+    width: 300px; /* Ancho ajustado para los inputs */
+}
+.navbar-form .btn {
+    margin-left: 10px;
+}
 /*-----------------*/
 /*   CONTENEDOR    */
 /*-----------------*/

@@ -3,8 +3,8 @@ require ('config/config.php');
 include ("config/conexion.php");
 $conexion = conectar();
 
-$query = "SELECT idproducto, nombre, precio FROM `producto` WHERE estado=1";
-$result = mysqli_query($conexion, $query);
+//$query = "SELECT idproducto, nombre, precio FROM `producto` WHERE estado=1";
+//$result = mysqli_query($conexion, $query);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -88,6 +88,14 @@ $result = mysqli_query($conexion, $query);
 
     </header>
 
+    <div class="navbar-form">
+        <form class="d-flex" action="" method="post">
+            <input class="form-control me-2" type="number" name="precio" placeholder="Precio Máximo" aria-label="Precio" value="<?php if(isset($_POST["precio"])){ echo $_POST["precio"];}?>">
+            <input class="form-control me-2" type="text" name="nombre" placeholder="Nombre" aria-label="Nombre" value="<?php if(isset($_POST["nombre"])){ echo $_POST["nombre"];}?>">
+            <button id="primary_c" class="btn btn-primary" type="submit">Buscar</button>
+        </form>
+    </div>
+
 
     <section class="text">
       <h1 id="titulo">PRODUCTOS</h1>
@@ -100,40 +108,58 @@ $result = mysqli_query($conexion, $query);
     <main>
       <div class="container">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-          <?php foreach ($result as $row) { ?>
-            <div class="col">
-              <div id="card7" class="card shadow-sm">
-                <?php
-                $id = $row['idproducto'];
-                $imagen = "imagenes/productos/" . $id . "/principal.png";
+          <?php
+          if (isset($_POST["precio"]) == '' && isset($_POST["nombre"]) == '') {
+            $query = "SELECT idproducto, nombre, precio FROM `producto` WHERE estado=1";
+          } else {
+            $query = "SELECT idproducto, nombre, precio FROM `producto` WHERE estado=1";
+            if ($_POST["precio"] != '') {
+              $precio = $_POST["precio"];
 
-                if (!file_exists($imagen)) {
-                  $imagen = "imagenes/no_photo.jpg";
-                }
-                ?>
-                <img id="imagen_a" src="<?php echo $imagen; ?>">
-                <div class="card-body">
-                  <h5 id="card" class="card-title">
-                    <?php echo $row['nombre']; ?>
-                  </h5>
-                  <p id="card" class="card-text">
-                    <?php echo number_format($row['precio'], 2, '.', ','); ?>
-                  </p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div>
-                      <a href="detalles.php? id=<?php echo $row['idproducto']; ?>&token=<?php echo
-                           hash_hmac('sha1', $row['idproducto'], KEY_TOKEN); ?>" class="btn btn-group"
-                        id="primary_c">Detalles</a>
+              $query .= " AND precio <= $precio";
+            }
+            if ($_POST["nombre"] != '') {
+              $nombre = $_POST["nombre"];
+              $query .= " AND UPPER(nombre) like UPPER('%$nombre%')";
+            }
+          }
+          $result = mysqli_query($conexion, $query);
+          if (mysqli_num_rows($result) > 0) {
+            foreach ($result as $row) { ?>
+              <div class="col">
+                <div id="card7" class="card shadow-sm">
+                  <?php
+                  $id = $row['idproducto'];
+                  $imagen = "imagenes/productos/" . $id . "/principal.png";
+
+                  if (!file_exists($imagen)) {
+                    $imagen = "imagenes/no_photo.jpg";
+                  }
+                  ?>
+                  <img id="imagen_a" src="<?php echo $imagen; ?>">
+                  <div class="card-body">
+                    <h5 id="card" class="card-title">
+                      <?php echo $row['nombre']; ?>
+                    </h5>
+                    <p id="card" class="card-text">
+                      <?php echo number_format($row['precio'], 2, '.', ','); ?>
+                    </p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div>
+                        <a href="detalles.php? id=<?php echo $row['idproducto']; ?>&token=<?php echo
+                             hash_hmac('sha1', $row['idproducto'], KEY_TOKEN); ?>" class="btn btn-group"
+                          id="primary_c">Detalles</a>
+                      </div>
+                      <!-- Dentro del bucle foreach donde se muestran los productos -->
+                      <a href="preferencias.php?idproducto=<?php echo $row['idproducto']; ?>&nombre=<?php echo urlencode($row['nombre']); ?>&precio=<?php echo $row['precio']; ?>&imagen=<?php echo urlencode($imagen); ?>"
+                        id="success_c" class="btn btn-success">Guardar</a>
+
                     </div>
-                    <!-- Dentro del bucle foreach donde se muestran los productos -->
-                    <a href="preferencias.php?idproducto=<?php echo $row['idproducto']; ?>&nombre=<?php echo urlencode($row['nombre']); ?>&precio=<?php echo $row['precio']; ?>&imagen=<?php echo urlencode($imagen); ?>"
-                      id="success_c" class="btn btn-success">Guardar</a>
-
                   </div>
                 </div>
               </div>
-            </div>
-          <?php } ?>
+            <?php }
+          } ?>
         </div>
       </div>
     </main>
