@@ -1,12 +1,36 @@
 <?php
-require ('config/config.php');
+// Inicia la sesión si no está iniciada
+if (session_status() === PHP_SESSION_NONE) {
+    @session_start();
+}
+
+// Verifica si el usuario ha iniciado sesión
+if (!isset($_SESSION['username'])) {
+    // Si no ha iniciado sesión, redirige a la página de inicio de sesión
+    header("Location: login.php");
+    exit; // Detiene la ejecución del script después de redirigir
+}
+// require ('config/config.php');
 include ("config/conexion.php");
 $conexion = conectar();
 
 $query = "SELECT idproducto, nombre, precio FROM `producto` WHERE estado=1";
 $result = mysqli_query($conexion, $query);
-?>
 
+
+// Verificar si se ha enviado el formulario para eliminar la preferencia
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['preferencia_id'])) {
+    // Obtener el ID de la preferencia a eliminar
+    $preferencia_id = $_POST['preferencia_id'];
+
+    // Aquí debes realizar el proceso para eliminar la preferencia de acuerdo a tu lógica de aplicación
+    // Por ejemplo, podrías eliminar la preferencia de la sesión o de la base de datos si estás utilizando una
+
+    // Redirigir nuevamente a la página de preferencias para que se actualice la vista
+    header("Location: preferencias.php");
+    exit;
+}
+?>
 <?php
 
 // Verificar si se recibieron los parámetros del producto desde la URL
@@ -118,6 +142,12 @@ if (isset($_GET['idproducto']) && isset($_GET['nombre']) && isset($_GET['precio'
                                 <div class="card-body">
                                     <h5 class="card-title"><?php echo $_SESSION['preferencia_nombre']; ?></h5>
                                     <p class="card-text"><?php echo $_SESSION['preferencia_precio']; ?></p>
+                                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+                                        <!-- Agregar un campo oculto para enviar el ID de la preferencia -->
+                                        <input type="hidden" name="preferencia_id"
+                                            value="<?php echo $_SESSION['preferencia_id']; ?>">
+                                        <button type="submit" class="btn btn-danger">Eliminar preferencia</button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
