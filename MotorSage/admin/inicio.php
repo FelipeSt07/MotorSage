@@ -1,3 +1,11 @@
+<?php
+
+include ("config/conexion.php");
+include ("clases/adminFunciones.php");
+include ("config/config.php");
+
+?>
+
 <?php include 'header.php'; ?>
 <main>
     <div class="container-fluid px-4">
