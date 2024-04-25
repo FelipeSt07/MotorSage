@@ -4,6 +4,17 @@ include ("config/conexion.php");
 include ("clases/adminFunciones.php");
 include ("config/config.php");
 
+if (!isset($_SESSION['user_type'])) {
+    header('Location: ../index.php');
+    exit;
+}
+
+if ($_SESSION['user_type'] != 'admin') {
+    header('Location: ../../index.php');
+    exit;
+}
+
+
 ?>
 
 <?php include 'header.php'; ?>
